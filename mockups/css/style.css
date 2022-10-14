@@ -1,0 +1,55 @@
+body {
+    background-color: darkblue;
+    color: white;
+}
+
+nav > a.menuitem {
+    color: darkblue;
+    background-color: white;
+    text-decoration-line: none;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+nav > a.menuitem:hover {
+    background-color: #dddddd;
+}
+
+.cabecalho {
+    font-size: 2em;
+    font-weight: bolder;
+}
+
+.texto {
+    font-size: 1.5em;
+}
+
+.layout {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+}
+
+div.flex-item {
+    margin: 1em;
+    padding: 1em;
+}
+
+@media screen and (min-width: 607px){
+    .layout {
+        flex-wrap: nowrap;
+    }
+    div.flex-item:not(:last-child){
+        border-right: 1px solid white;
+    }
+}
+
+@media screen and (max-width: 607px){
+    .layout {
+        flex-wrap: wrap;
+    }
+    div.flex-item:not(:last-child){
+        border-bottom: 1px solid white;
+    }
+}
