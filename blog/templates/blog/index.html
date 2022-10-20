@@ -19,12 +19,28 @@
     <h1 class="cabecalho">Essa é uma super página super legal</h1>
     <div class="layout">
         <div class="flex-item">
+            <form method="post">
+                {% csrf_token %}
+                {{ cadastra_form.as_p }}
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+        <div class="flex-item">
             <p class="texto">E você tem que amá-la!</p>
         </div>
         <div class="flex-item">
             <p class="texto">Quem concorda, respira.</p>
         </div>
+        <div class="flex-item">
+            <ol>
+                {% for cada in todos %}
+                <img src="{{cada.figura}}" alt="">
+                <li class="ficarosa">{{cada.username}}</li>
+                {% endfor %}
+            </ol>
+        </div>
     </div>
+
 
     <script src="/static/js/script.js"></script>
 </body>
